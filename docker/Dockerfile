@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y libglib2.0-0 libsm6 libxrender-dev libx
  && rm -rf /var/lib/apt/lists/*
 
 # Install mmdetection
+RUN pip install --no-cache-dir "git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI"
+RUN pip install --no-cache-dir cityscapesscripts
 RUN conda clean --all
 RUN git clone https://github.com/open-mmlab/mmdetection.git /mmdetection
 WORKDIR /mmdetection
