@@ -50,7 +50,6 @@ class Bottleneck(_Bottleneck):
                 stride=self.conv2_stride,
                 padding=self.dilation,
                 dilation=self.dilation,
-                groups=groups,
                 bias=False)
         else:
             assert self.conv_cfg is None, 'conv_cfg must be None for DCN'
